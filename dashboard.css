@@ -1,0 +1,75 @@
+:root {
+  color-scheme: light dark;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 2rem;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+.intro {
+  color: #666;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card .status {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.card .cmd code {
+  background: #f2f2f2;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.card .link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card .link:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .intro {
+    color: #aaa;
+  }
+  .card {
+    border-color: #333;
+  }
+  .card .status {
+    color: #bbb;
+  }
+  .card .cmd code {
+    background: #2a2a2a;
+    color: #eee;
+  }
+}
