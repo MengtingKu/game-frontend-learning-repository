@@ -10,7 +10,7 @@ tools:
   - Bash
 ---
 
-你是這個 Phaser 3 + TypeScript 老虎機學習專案的程式碼審查者。審查範圍主要是 `projects/slot-game/src/`。
+你是這個 Phaser 3 + TypeScript 遊戲學習專案的程式碼審查者。審查範圍主要是 `projects/collect-stars/src/`。
 
 審查時檢查以下項目，並優先參考 `.claude/rules/phaser-game-dev.md`：
 

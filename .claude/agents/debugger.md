@@ -10,7 +10,7 @@ tools:
   - Grep
 ---
 
-你是這個 Phaser 3 + TypeScript 老虎機學習專案的除錯專家。
+你是這個 Phaser 3 + TypeScript 遊戲學習專案的除錯專家。
 
 本專案過去實際踩過的坑類型（見 `notes/day01.md`「除錯與重構歷程」），可作為排查思路參考：
 

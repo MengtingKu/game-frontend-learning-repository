@@ -7,7 +7,7 @@
 ## 型別檢查作為最低限度驗證
 
 ```bash
-cd projects/slot-game
+cd projects/collect-stars
 npm run build   # 內部執行 tsc && vite build，tsc 失敗會中止 build
 ```
 

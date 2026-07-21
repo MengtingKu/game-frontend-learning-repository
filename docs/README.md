@@ -1,6 +1,6 @@
 # 2026 Game Frontend Learning Repository
 
-個人 HTML5 遊戲前端學習 repo，主線任務是用 **Phaser 3** 與 **GSAP** 開發一款老虎機（Slot Game）。學習方式是每天在 `notes/dayXX.md` 記錄當日目標、學到的 API、除錯歷程與反思，並同步在 `projects/slot-game/` 累積實作進度。
+個人 HTML5 遊戲前端學習 repo，用 **Phaser 3** 與 **GSAP** 練習遊戲開發。學習方式是每天在 `notes/dayXX.md` 記錄當日目標、學到的 API、除錯歷程與反思，目前主要在 `projects/collect-stars/`（星星收集練習專案）累積實作進度，未來會擴充到大老二（`projects/big-two/`）與老虎機等專案。
 
 ## 技術棧
 
@@ -18,7 +18,7 @@
 
 ```bash
 git clone <repository-url>
-cd 2026-game-frontend-learning-repository/projects/slot-game
+cd 2026-game-frontend-learning-repository/projects/collect-stars
 npm install
 npm run dev
 ```
@@ -41,7 +41,7 @@ npm run dev
 ├── game-analysis/           # 競品/其他遊戲的逆向工程分析筆記
 ├── notes/                   # 每日學習筆記（dayXX.md）
 ├── ideas/                   # 隨手記錄的靈感（依日期命名）
-└── projects/slot-game/      # 唯一實作中的專案，見 ARCHITECTURE.md
+└── projects/collect-stars/      # 唯一實作中的專案，見 ARCHITECTURE.md
 ```
 
 ## 文件索引

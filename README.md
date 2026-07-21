@@ -1,6 +1,6 @@
 # 🎮 2026 Game Frontend Learning Repository
 
-這是用於學習 HTML5 遊戲前端開發的專案儲存庫，目前主要聚焦於使用 **Phaser 3** 與 **GSAP** 開發老虎機（Slot Game）遊戲。
+這是用於學習 HTML5 遊戲前端開發的專案儲存庫，目前主要聚焦於使用 **Phaser 3** 與 **GSAP** 練習遊戲開發，目前有星星收集練習專案（Collect Stars）與大老二（Big Two），未來會延伸到老虎機。
 
 ---
 
@@ -21,18 +21,13 @@
 ├── game-analysis/           # 遊戲邏輯與數值分析相關文檔
 ├── notes/                   # 學習與開發筆記
 │   └── day00.md             # 環境建置與工作流說明
-└── projects/                # 實作專案目錄
-    └── slot-game/           # 老虎機（Slot Game）主專案
-        ├── src/             # 遊戲原始碼
-        │   ├── assets/      # 專案內部資源
-        │   ├── config/      # 遊戲設定
-        │   ├── managers/    # 管理器（音效、狀態等）
-        │   ├── objects/     # 遊戲物件（Reel, Symbol 等）
-        │   ├── scenes/      # 場景（Boot, Preload, GameScene 等）
-        │   ├── ui/          # UI 元件
-        │   └── game.ts      # 遊戲主入口
-        └── package.json
+└── projects/                # 實作專案目錄，每個都是獨立的 Vite 專案
+    ├── collect-stars/       # 星星收集練習專案（Day01 官方範例延伸，dev port 5173）
+    │   └── src/scenes/      # BootScene → PreloadScene → GameScene
+    └── big-two/             # 大老二（Scene 骨架已建立，玩法未開始，dev port 5174）
 ```
+
+想一次看到所有專案的進度與連結，直接用瀏覽器打開根目錄的 `index.html`（純靜態 dashboard）。
 
 ---
 
@@ -45,10 +40,10 @@ git clone <repository-url>
 cd 2026-game-frontend-learning-repository
 ```
 
-### 2. 啟動 Slot Game 專案
+### 2. 啟動 Collect Stars 專案
 
 ```bash
-cd projects/slot-game
+cd projects/collect-stars
 npm install
 npm run dev
 ```
@@ -59,7 +54,7 @@ npm run dev
 
 ## 🎨 美術資源處理流程 (TexturePacker)
 
-在開發 Slot Game 時，建議使用 TexturePacker 將符號 (Symbols) 合併為圖集 (Sprite Sheet) 以優化效能：
+在開發 Collect Stars 時，建議使用 TexturePacker 將符號 (Symbols) 合併為圖集 (Sprite Sheet) 以優化效能：
 
 ```mermaid
 graph TD

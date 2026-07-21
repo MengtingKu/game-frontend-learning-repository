@@ -1,6 +1,6 @@
 ---
 paths:
-  - "projects/slot-game/src/**"
+  - "projects/collect-stars/src/**"
 ---
 
 # Phaser / TypeScript 遊戲開發規則

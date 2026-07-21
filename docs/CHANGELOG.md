@@ -19,6 +19,6 @@ feat: 🎸 day01 用官網範例認識 phaser 架構和生命週期
 
 feat: 🎸 HTML5 Game Frontend 開發環境
 
-- 建立 repo 骨架：`projects/slot-game/`（Vite + TypeScript + Phaser 3 + GSAP）。
+- 建立 repo 骨架：`projects/collect-stars/`（Vite + TypeScript + Phaser 3 + GSAP）。
 - 預留 `managers/`、`objects/`、`scenes/`、`config/`、`types/` 空檔案結構。
 - 新增 `README.md`、`notes/day00.md`。

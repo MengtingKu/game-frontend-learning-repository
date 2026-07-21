@@ -23,7 +23,7 @@
 
 ## 禁止 commit 的檔案
 
-依 `.gitignore`（`projects/slot-game/.gitignore`）：`node_modules`、`dist`、`dist-ssr`、`*.log`、`.DS_Store`、`.vscode/*`（除 `extensions.json`）、`.idea`。額外注意：不要 commit `.env`（目前專案無此檔案，若未來新增需補進 `.gitignore`）。
+依 `.gitignore`（`projects/collect-stars/.gitignore`）：`node_modules`、`dist`、`dist-ssr`、`*.log`、`.DS_Store`、`.vscode/*`（除 `extensions.json`）、`.idea`。額外注意：不要 commit `.env`（目前專案無此檔案，若未來新增需補進 `.gitignore`）。
 
 ## Commit 前檢查
 

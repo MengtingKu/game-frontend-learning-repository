@@ -10,7 +10,7 @@ export default class PreloadScene extends Phaser.Scene {
 
   /**
    * 載入資源
-   * - 任務：把 slot game 的圖片載入
+   * - 任務：把 Phaser 官方教學 demo 的圖片載入
    * - 相關知識：preload() 裡面的 this.load，然後根據 spec 選擇要用的載入函式 image, audio, spritesheet, tilemap...
    */
   preload() {

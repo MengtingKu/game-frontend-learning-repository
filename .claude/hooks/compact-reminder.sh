@@ -7,5 +7,5 @@ cat <<'EOF'
 - Scene 的碰撞/重疊回呼一律用箭頭屬性函式綁定 this，避免 Phaser callback context 遺失。
 - 素材路徑：public/assets/ 下分 raw/（原始檔）、atlas/（TexturePacker 產出）、demo/（暫時性教學素材）。
 - Commit message 格式：feat: 🎸 dayNN <描述>，詳見 .claude/rules/git-commit.md。
-- 所有指令需在 projects/slot-game/ 目錄下執行（npm run dev/build/preview）。
+- 所有指令需在 projects/collect-stars/ 目錄下執行（npm run dev/build/preview）。
 EOF

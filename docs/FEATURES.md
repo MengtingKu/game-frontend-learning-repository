@@ -7,8 +7,8 @@
 | 功能 | 狀態 | 行為描述 |
 |------|------|----------|
 | BootScene | ✅ | 不載入任何素材，`create()` 印出 `console.log('Boot')` 後立即 `this.scene.start('PreloadScene')`。用途是預留給未來「載入 loading 畫面本身所需的最小素材」（目前尚未這麼做）。 |
-| PreloadScene | 🚧 | `preload()` 目前載入的是 **Phaser 官方教學 demo 素材**（`sky`、`ground`=platform、`star`、`bomb` 四張圖 + `dude` spritesheet，32×48 frame），並非 slot game 的符號素材。`create()` 直接切到 `GameScene`，無 loading bar / 進度顯示。 |
-| GameScene | 🚧 | 目前是 Phaser 官方星星收集教學的 TypeScript Class 移植版（見下方「星星收集 Demo」），尚未包含任何老虎機邏輯。 |
+| PreloadScene | 🚧 | `preload()` 目前載入的是 **Phaser 官方教學 demo 素材**（`sky`、`ground`=platform、`star`、`bomb` 四張圖 + `dude` spritesheet，32×48 frame）。`create()` 直接切到 `GameScene`，無 loading bar / 進度顯示。 |
+| GameScene | 🚧 | 目前是 Phaser 官方星星收集教學的 TypeScript Class 移植版（見下方「星星收集 Demo」），客製化功能（結算畫面、加速）尚未開始。 |
 | UIScene | ⬜ | 空檔案，未加入 `main.ts` 的 `scene: [...]` 列表，尚未被使用。 |
 
 ## 星星收集 Demo（GameScene 現況）
@@ -22,33 +22,34 @@
 - **遊戲結束**：玩家與任一炸彈 collide 時觸發 `hitBomb`：暫停整個物理模擬（`this.physics.pause()`）、玩家變紅（`setTint(0xff0000)`）、播放 `turn` 動畫、設定 `gameOver = true`。`update()` 於下一幀起直接 return，畫面凍結。
 - **無重新開始機制**：目前遊戲結束後沒有 restart 按鈕或畫面提示，需重新整理頁面。
 
-## Slot Game 核心玩法
+## Collect Stars 客製化功能（規劃中）
+
+`collect-stars` 不會變成老虎機（那是另一個獨立專案，見下方「Slot Machine」），而是持續在星星收集 demo 上加客製化功能：
 
 | 功能 | 狀態 | 說明 |
 |------|------|------|
-| Reel（捲軸）視覺與旋轉 | ⬜ | `src/objects/Reel.ts` 為空檔案 |
-| Symbol（符號）定義與顯示 | ⬜ | `src/objects/Symbol.ts` 為空檔案 |
-| Spin / Stop 流程 | ⬜ | 尚未設計狀態機 |
-| Payline（連線）判定 | ⬜ | `src/objects/WinLine.ts` 為空檔案 |
-| Bet（下注）UI 與邏輯 | ⬜ | `src/objects/Button.ts`、`src/ui/` 皆為空 |
-| 音效（Spin/Win/Lose） | ⬜ | `src/managers/AudioManager.ts` 為空檔案 |
-| 動畫管理（GSAP 整合） | ⬜ | `src/managers/AnimationManager.ts` 為空檔案；`package.json` 已安裝 GSAP 但程式碼尚未 import 使用 |
-| 遊戲狀態管理 | ⬜ | `src/managers/GameManager.ts` 為空檔案 |
-| 素材圖集（TexturePacker atlas） | ⬜ | `public/assets/atlas/` 目錄為空，流程規劃於 `notes/day00.md` |
-| 型別定義 | ⬜ | `src/types/index.ts` 為空檔案 |
+| 結算畫面（GameOver / Win） | ⬜ | 目前遊戲結束只是凍結畫面，沒有任何 UI 提示 |
+| 玩家加速機制 | ⬜ | 尚未設計 |
+
+`src/managers/`、`src/objects/`、`src/config/`、`src/types/` 底下的空檔案（`Reel.ts`、`Symbol.ts`、`WinLine.ts` 等）是 Day00 建立骨架時預留的老虎機相關命名，現在已經不適用於這個專案，之後有實際客製化需求時會重新規劃檔案結構，不會照原本的老虎機命名繼續填。
+
+## Slot Machine（規劃中，另開新專案）
+
+老虎機會是一個全新的獨立專案（`projects/slot-machine/`，尚未建立），第二週後才開始，不會延續 `collect-stars`。詳見 `docs/ARCHITECTURE.md` 的 port 對照表。
 
 ## 下一步（依 notes/day01.md「明日預告」）
 
 1. 三個 Scene 職責分離（BootScene/PreloadScene/GameScene 各司其職）— ✅ 已於 2026-07-20 commit `9b5b00b` 完成。
-2. 運用目前學到的 Phaser 知識，開始進入實際遊戲核心（依 `notes/day01.md` 原文為「棋牌大老二」，與 `ideas/2026-07-20.md`、`game-analysis/template.md` 的探索方向一致，可能會與 slot game 並行/交叉學習）。
+2. 大老二專案骨架 — ✅ 已建立（`projects/big-two/`），玩法設計待後續 brainstorm。
+3. `collect-stars` 客製化功能（結算畫面、加速）— 待學完 container、particle 等 Phaser 知識後再開始設計。
 
 ## Big Two（`projects/big-two/`）
 
-獨立的新專案，比照 `slot-game` 的骨架建立，目前只到能執行的空殼階段。
+獨立的新專案，比照 `collect-stars` 的骨架建立，目前只到能執行的空殼階段。
 
 | 功能 | 狀態 | 說明 |
 |------|------|------|
 | 專案骨架 | ✅ | `package.json`/`tsconfig.json`/`vite.config.ts`/`index.html` 已建立，dev port 固定為 `5174` |
-| BootScene → PreloadScene → GameScene | ✅ | 比照 slot-game 的 Scene 骨架；`GameScene` 目前僅顯示 `"Big Two - Coming Soon"` placeholder 文字，`preload()` 尚無素材可載入 |
+| BootScene → PreloadScene → GameScene | ✅ | 比照 collect-stars 的 Scene 骨架；`GameScene` 目前僅顯示 `"Big Two - Coming Soon"` placeholder 文字，`preload()` 尚無素材可載入 |
 | 遊戲規則（發牌/出牌/AI 回合/結算） | ⬜ | 尚未設計，需另開專屬的 brainstorm session |
 | 素材與 UI | ⬜ | 尚未開始 |

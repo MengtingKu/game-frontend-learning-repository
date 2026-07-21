@@ -10,7 +10,7 @@
 
 ## 任務
 
-建立 HTML5 Game Frontend 開發環境，並建立 slot game prototype
+建立 HTML5 Game Frontend 開發環境，並建立 collect-stars prototype
 
 ## 已安裝
 
@@ -18,14 +18,14 @@
 | ------------------------ | ---- | ----------------------------------------------- |
 | Git Repo 建立            | ✅   | -                                               |
 | 本地資料夾               | ✅   | -                                               |
-| projects/slot-game       | ✅   | -                                               |
+| projects/collect-stars       | ✅   | -                                               |
 | Vite + TS                | ✅   | 8.1.5                                           |
 | Phaser (遊戲引擎)        | ✅   | 3.90.0                                          |
 | GSAP (動畫函式庫)        | ✅   | 3.15.0                                          |
 | TexturePacker (圖資打包) | ✅   | only 7 days free, so on-line is the best choice |
 | README                   | ✅   | -                                               |
 
-## TexturePacker 在 Slot Game 的建議流程
+## TexturePacker 在 Collect Stars 的建議流程
 
 ```ts
 設計師提供 PNG
@@ -56,4 +56,4 @@ this.add.image(x, y, 'symbols', 'seven.png');
 
 ## 下一步
 
-- 建立 slot game prototype
+- 建立 collect-stars prototype

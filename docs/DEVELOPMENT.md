@@ -15,7 +15,7 @@
 | 學習筆記檔名 | `dayNN.md`（NN 為兩位數流水號） | `day00.md`、`day01.md` |
 | 靈感筆記檔名 | `YYYY-MM-DD.md` | `2026-07-20.md` |
 | 計畫檔名 | `YYYY-MM-DD-<feature-name>.md` | `2026-07-25-reel-spin.md` |
-| 遊戲專案資料夾 | kebab-case，置於 `projects/` | `slot-game`、`big-two` |
+| 遊戲專案資料夾 | kebab-case，置於 `projects/` | `collect-stars`、`big-two` |
 
 ## 模組系統
 
@@ -47,8 +47,8 @@
 
 repo 採「一個遊戲 = 一個獨立 Vite 專案」的模式（見 `docs/ARCHITECTURE.md`「Repo 層級：多專案 + Dashboard」），新增遊戲時：
 
-1. 在 `projects/` 下建立新資料夾 `projects/<name>/`，比照 `projects/slot-game/` 或 `projects/big-two/` 的骨架，複製 `tsconfig.json`、`.gitignore`、`public/favicon.svg`（三者可直接 `cp`，內容不需調整），並各自寫入 `package.json`（`name` 欄位改成新專案名）、`index.html`（`title` 改成新專案名）、`src/main.ts`、`src/scenes/{Boot,Preload,Game}Scene.ts`。
-2. 新增 `vite.config.ts`，指定專屬的 `server.port`（目前已使用：`slot-game` 用 Vite 預設 `5173`；`big-two` 用 `5174`；下一個新專案請依序使用 `5175`，並更新 `docs/ARCHITECTURE.md` 的 port 對照表）。
+1. 在 `projects/` 下建立新資料夾 `projects/<name>/`，比照 `projects/collect-stars/` 或 `projects/big-two/` 的骨架，複製 `tsconfig.json`、`.gitignore`、`public/favicon.svg`（三者可直接 `cp`，內容不需調整），並各自寫入 `package.json`（`name` 欄位改成新專案名）、`index.html`（`title` 改成新專案名）、`src/main.ts`、`src/scenes/{Boot,Preload,Game}Scene.ts`。
+2. 新增 `vite.config.ts`，指定專屬的 `server.port`（目前已使用：`collect-stars` 用 Vite 預設 `5173`；`big-two` 用 `5174`；下一個新專案請依序使用 `5175`，並更新 `docs/ARCHITECTURE.md` 的 port 對照表）。
 3. 在根目錄 `index.html`（dashboard）的 `.card-grid` 裡加入一張新的 `<article class="card">`，包含遊戲名稱、狀態說明、啟動指令、`http://localhost:<port>` 連結，格式比照既有卡片。
 4. 更新 `docs/FEATURES.md`，新增該專案的功能狀態區塊。
 
