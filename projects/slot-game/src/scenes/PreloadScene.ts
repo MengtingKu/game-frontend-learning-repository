@@ -1,5 +1,8 @@
 import Phaser from 'phaser'
 
+/**
+ * 素材載入場景
+ */
 export default class PreloadScene extends Phaser.Scene {
   constructor() {
     super('PreloadScene')
@@ -22,6 +25,6 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   create() {
-    this.scene.start('GameScene')
+    this.scene.start('GameScene') // 切換到下一個 Scene
   }
 }

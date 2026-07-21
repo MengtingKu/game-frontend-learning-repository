@@ -1,5 +1,8 @@
 import Phaser from 'phaser'
 
+/**
+ * 真正遊戲邏輯
+ */
 export default class GameScene extends Phaser.Scene {
   private platforms!: Phaser.Physics.Arcade.StaticGroup
   private player!: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody
