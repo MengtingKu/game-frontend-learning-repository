@@ -1,0 +1,13 @@
+# Force LF line endings in the repo regardless of the checkout machine's
+# core.autocrlf setting. Without this, cloning on Windows with the common
+# `core.autocrlf=true` setting rewrites .sh files to CRLF, which breaks the
+# shebang line (#!/bin/bash) when Git Bash tries to execute them.
+* text=auto eol=lf
+*.sh text eol=lf
+
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text eol=lf
+*.ico binary
