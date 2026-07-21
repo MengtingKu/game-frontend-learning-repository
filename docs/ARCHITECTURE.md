@@ -1,5 +1,21 @@
 # ARCHITECTURE
 
+## Repo 層級：多專案 + Dashboard
+
+這個 repo 底下每個遊戲都是獨立的 Vite + Phaser 專案，彼此不共用同一個 `Phaser.Game` 實例：
+
+| 專案 | 路徑 | Dev Port | 狀態 |
+|------|------|----------|------|
+| Slot Game | `projects/slot-game/` | 5173（Vite 預設） | 🚧 進行中 |
+| Big Two | `projects/big-two/` | 5174 | ⬜ 骨架已建立，玩法未開始 |
+| Slot Machine（規劃中，第二週後開始） | `projects/slot-machine/`（尚未建立） | 5175（預留） | 未開始 |
+
+根目錄的 `index.html` + `dashboard.css` 是一個不依賴 Phaser、不依賴任何前端框架的純靜態頁面，列出以上專案的卡片與連結，方便在瀏覽器分頁之間切換查看不同遊戲的進度。開發時仍需在對應的 `projects/<name>/` 下各自執行 `npm run dev`，dashboard 本身不會幫你啟動任何 server。
+
+新增遊戲專案的步驟見 `docs/DEVELOPMENT.md`「新增一個遊戲專案的步驟」。
+
+以下章節（目錄結構、啟動流程、Scene 生命週期等）是針對 `projects/slot-game/` 的說明；`big-two` 目前僅有骨架（`BootScene → PreloadScene → GameScene`，`GameScene` 顯示 placeholder 文字），尚無等效的詳細內容可寫，待實際玩法設計後再補充。
+
 ## 目錄結構
 
 ```

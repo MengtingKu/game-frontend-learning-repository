@@ -6,15 +6,17 @@
 
 ## 常用指令
 
-所有指令需在 `projects/slot-game/` 目錄下執行：
+每個遊戲都是獨立的 Vite 專案，指令需在對應的 `projects/<name>/` 目錄下執行：
 
 ```bash
-cd projects/slot-game
+cd projects/slot-game   # 或 cd projects/big-two
 npm install       # 安裝依賴
-npm run dev       # 啟動開發伺服器 http://localhost:5173
+npm run dev       # 啟動開發伺服器（slot-game: :5173，big-two: :5174）
 npm run build     # tsc 型別檢查 + vite build
 npm run preview   # 預覽 production build
 ```
+
+想一次看到所有遊戲專案的進度與連結，直接用瀏覽器開啟根目錄的 `index.html`（純靜態 dashboard，不需要安裝或建置）。
 
 ## 關鍵規則
 
@@ -23,6 +25,7 @@ npm run preview   # 預覽 production build
 - 素材路徑：`public/assets/` 下有 `raw/`（原始 PNG）、`atlas/`（TexturePacker 產出的圖集）、`demo/`（Phaser 官方教學素材，屬暫時性，未來會被 slot game 素材取代）。`preload()` 用相對路徑載入（如 `'assets/demo/sky.png'`），對應 Vite 的 `public/` 根目錄。
 - Commit message 沿用既有慣例：`feat: 🎸 dayNN <描述>`，詳見 `.claude/rules/git-commit.md`。
 - 功能開發若牽涉多步驟規劃，使用 `docs/plans/` 記錄計畫；完成後移至 `docs/plans/archive/`。
+- 新增遊戲一律建立新的 `projects/<name>/` 資料夾（比照 `slot-game`／`big-two` 的骨架），不要塞進既有專案的 `Phaser.Game` 實例；新增後記得在根目錄 dashboard（`index.html`）加卡片，並依 `docs/ARCHITECTURE.md` 的 port 對照表指定不衝突的 dev port。
 
 ## 詳細文件
 

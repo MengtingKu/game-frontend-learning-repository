@@ -41,3 +41,14 @@
 
 1. 三個 Scene 職責分離（BootScene/PreloadScene/GameScene 各司其職）— ✅ 已於 2026-07-20 commit `9b5b00b` 完成。
 2. 運用目前學到的 Phaser 知識，開始進入實際遊戲核心（依 `notes/day01.md` 原文為「棋牌大老二」，與 `ideas/2026-07-20.md`、`game-analysis/template.md` 的探索方向一致，可能會與 slot game 並行/交叉學習）。
+
+## Big Two（`projects/big-two/`）
+
+獨立的新專案，比照 `slot-game` 的骨架建立，目前只到能執行的空殼階段。
+
+| 功能 | 狀態 | 說明 |
+|------|------|------|
+| 專案骨架 | ✅ | `package.json`/`tsconfig.json`/`vite.config.ts`/`index.html` 已建立，dev port 固定為 `5174` |
+| BootScene → PreloadScene → GameScene | ✅ | 比照 slot-game 的 Scene 骨架；`GameScene` 目前僅顯示 `"Big Two - Coming Soon"` placeholder 文字，`preload()` 尚無素材可載入 |
+| 遊戲規則（發牌/出牌/AI 回合/結算） | ⬜ | 尚未設計，需另開專屬的 brainstorm session |
+| 素材與 UI | ⬜ | 尚未開始 |
