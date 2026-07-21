@@ -2,7 +2,7 @@
 
 ## 專案概述
 
-2026 Game Frontend Learning Repository — 個人 HTML5 遊戲前端學習 repo，以每日筆記（`notes/dayXX.md`）記錄學習歷程，並在 `projects/slot-game/` 實作一款以 **Phaser 3 + TypeScript + Vite** 開發的老虎機（Slot Game）。目前進度為 Day01：已將 Phaser 官方星星收集教學拆成 `BootScene → PreloadScene → GameScene` 三個 Class Scene，尚未進入真正的 slot game 邏輯（`managers/`、`objects/`、`config/`、`types/` 仍是空殼）。
+2026 Game Frontend Learning Repository — 個人 HTML5 遊戲前端學習 repo，以每日筆記（`notes/dayXX.md`）記錄學習歷程。採「一個遊戲 = 一個獨立 Vite 專案」的模式，目前有 `projects/slot-game/`（以 **Phaser 3 + TypeScript + Vite** 開發的老虎機 Slot Game，進度為 Day01：已將 Phaser 官方星星收集教學拆成 `BootScene → PreloadScene → GameScene` 三個 Class Scene，尚未進入真正的 slot game 邏輯，`managers/`、`objects/`、`config/`、`types/` 仍是空殼）與 `projects/big-two/`（大老二，目前僅有 Scene 骨架，玩法未開始）。根目錄的 `index.html` 是列出所有遊戲專案的靜態 dashboard。
 
 ## 常用指令
 

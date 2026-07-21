@@ -8,7 +8,7 @@
 |------|------|----------|------|
 | Slot Game | `projects/slot-game/` | 5173（Vite 預設） | 🚧 進行中 |
 | Big Two | `projects/big-two/` | 5174 | ⬜ 骨架已建立，玩法未開始 |
-| Slot Machine（規劃中，第二週後開始） | `projects/slot-machine/`（尚未建立） | 5175（預留） | 未開始 |
+| Slot Machine（規劃中，第二週後開始） | `projects/slot-machine/`（尚未建立） | 5175（預留） | ⬜ 未開始 |
 
 根目錄的 `index.html` + `dashboard.css` 是一個不依賴 Phaser、不依賴任何前端框架的純靜態頁面，列出以上專案的卡片與連結，方便在瀏覽器分頁之間切換查看不同遊戲的進度。開發時仍需在對應的 `projects/<name>/` 下各自執行 `npm run dev`，dashboard 本身不會幫你啟動任何 server。
 
