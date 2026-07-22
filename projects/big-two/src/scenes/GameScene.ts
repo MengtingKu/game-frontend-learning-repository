@@ -15,53 +15,61 @@ export default class GameScene extends Phaser.Scene {
 
     // ── 標題文字 ──────────────────────────────────────────
     this.add
-      .text(cx, 40, 'Image  vs  Sprite', {
+      .text(cx, 40, '測試 pointerdown 事件觸發', {
         fontSize: '24px',
         color: '#ffffff',
         fontStyle: 'bold'
       })
       .setOrigin(0.5)
 
-    this.add
-      .text(cx - 150, 80, 'this.add.image()', {
-        fontSize: '14px',
-        color: '#aaaaff'
-      })
-      .setOrigin(0.5)
+    // this.add
+    //   .text(cx - 150, 80, 'this.add.image()', {
+    //     fontSize: '14px',
+    //     color: '#aaaaff'
+    //   })
+    //   .setOrigin(0.5)
 
-    this.add
-      .text(cx + 150, 80, 'this.add.sprite()', {
-        fontSize: '14px',
-        color: '#aaffaa'
-      })
-      .setOrigin(0.5)
+    // this.add
+    //   .text(cx + 150, 80, 'this.add.sprite()', {
+    //     fontSize: '14px',
+    //     color: '#aaffaa'
+    //   })
+    //   .setOrigin(0.5)
 
-    // ── 1. 建立兩張一模一樣的卡牌 ────────────────────────
     // 左邊：建立並渲染靜態圖片 Image（靜態，沒有 play()）
-    const leftCard = this.add.image(cx - 150, cy, 'image')
-    console.log('leftCard =>', leftCard)
+    const leftCard = this.add.image(cx, cy, 'image')
+    // this.input.on('pointerdown', pointer => {
+    //   this.add.image(pointer.x, pointer.y, 'sprite')
+    // })
+
+    leftCard
+      .setScale(1.8)
+      .setInteractive()
+      .on('pointerdown', () => {
+        console.log('leftCard pointerdown')
+        leftCard.x += 30
+        leftCard.y += 10
+      })
 
     // 右邊：建立並建立並渲染 Sprite（可以動，有 play()）
-    const rightCard = this.add.sprite(cx + 150, cy, 'sprite')
-    console.log('rightCard =>', rightCard)
+    // const rightCard = this.add.sprite(cx + 150, cy, 'sprite')
 
-    // ── 2. setScale(1.5) ─────────────────────────────────
-    leftCard.setScale(1.5)
-    rightCard.setScale(1.5)
+    // ── day02.1 setScale(1.8) ─────────────────────────────────
+    // leftCard.setScale(1.8)
 
-    // ── 2. setDisplaySize(width, height) ──────────────────
+    // ── day02.2 setDisplaySize(width, height) ──────────────────
     // leftCard.setDisplaySize(200, 400)
     // rightCard.setDisplaySize(200, 400)
 
-    // ── 3. setAngle(180) ──────────────────────────────────
+    // ── day02.3 setAngle(180) ──────────────────────────────────
     // leftCard.setAngle(180)
     // rightCard.setAngle(180)
 
-    // ── 4. setFlipX(true) ────────────────────────────────
+    // ── day02.4 setFlipX(true) ────────────────────────────────
     // leftCard.setFlipX(true)
     // rightCard.setFlipX(true)
 
-    // ── 5. play('left') ──────────────────────────────────
+    // ── day02.5 play('left') ──────────────────────────────────
     // Image 沒有 play()，TypeScript 甚至不讓你呼叫（compile error）
     // 這裡用 type assertion 強制示範，執行期會拋 TypeError
     // try {
