@@ -25,6 +25,27 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   create() {
+    // 建立玩家動畫（全域共享）
+    this.anims.create({
+      key: 'left', // 關鍵字，後面 update 會用到
+      frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }), // 幫我挑出哪些圖片來播放(從 0 開始，到 3 結束，因為 4th 是面向玩家的姿勢)
+      frameRate: 10, // 一秒播放 10 張圖片
+      repeat: -1 // -1 代表無限重複播放，0 代表只播放一次(總共 1 次)，1 代表重複播放一次(總共 2 次)，以此類推
+    })
+
+    this.anims.create({
+      key: 'turn', // 關鍵字，後面 update 會用到
+      frames: [{ key: 'dude', frame: 4 }], // 幫我挑出哪些圖片來播放(從 0 開始，到 3 結束，因為 4th 是面向玩家的姿勢)
+      frameRate: 20 // 一秒播放 20 張圖片
+    })
+
+    this.anims.create({
+      key: 'right', // 關鍵字，後面 update 會用到
+      frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }), // 幫我挑出哪些圖片來播放(從 5 開始，到 8 結束，因為 4th 是面向玩家的姿勢)
+      frameRate: 10, // 一秒播放 10 張圖片
+      repeat: -1 // -1 代表無限重複播放，0 代表只播放一次(總共 1 次)，1 代表重複播放一次(總共 2 次)，以此類推
+    })
+
     this.scene.start('GameScene') // 切換到下一個 Scene
   }
 }

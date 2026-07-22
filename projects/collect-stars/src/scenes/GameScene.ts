@@ -52,27 +52,6 @@ export default class GameScene extends Phaser.Scene {
     this.player.setCollideWorldBounds(true) // 讓玩家不能離開遊戲世界（World）的邊界
     this.physics.add.collider(this.player, this.platforms) // 從現在開始持續檢查 player 和 platforms 有沒有撞到，如果撞到，就不要讓它們重疊
 
-    // 建立玩家動畫
-    this.anims.create({
-      key: 'left', // 關鍵字，後面 update 會用到
-      frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }), // 幫我挑出哪些圖片來播放(從 0 開始，到 3 結束，因為 4th 是面向玩家的姿勢)
-      frameRate: 10, // 一秒播放 10 張圖片
-      repeat: -1 // -1 代表無限重複播放，0 代表只播放一次(總共 1 次)，1 代表重複播放一次(總共 2 次)，以此類推
-    })
-
-    this.anims.create({
-      key: 'turn',
-      frames: [{ key: 'dude', frame: 4 }],
-      frameRate: 20
-    })
-
-    this.anims.create({
-      key: 'right',
-      frames: this.anims.generateFrameNumbers('dude', { start: 5, end: 8 }),
-      frameRate: 10,
-      repeat: -1
-    })
-
     /**
      * 建立一堆星星
      */
