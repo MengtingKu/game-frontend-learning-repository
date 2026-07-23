@@ -17,6 +17,17 @@ export default class PreloadScene extends Phaser.Scene {
     // 載入 assets 中的撲克牌圖片
     this.load.image('image', 'assets/img_poker_s1_simplify.png')
     this.load.image('sprite', 'assets/img_poker_h1_simplify.png')
+
+    const suits = ['s', 'h', 'd', 'c']
+
+    suits.forEach(suit => {
+      for (let i = 1; i <= 13; i++) {
+        this.load.image(
+          `${suit}${i}`,
+          `assets/img_poker_${suit}${i}_simplify.png`
+        )
+      }
+    })
   }
 
   create() {

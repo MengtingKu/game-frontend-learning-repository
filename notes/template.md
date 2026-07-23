@@ -1,55 +1,37 @@
-# Day01：建立第一個 Phaser Scene
+# Day0x：
 
-> 📆 2026-07-21
+> 📆 2026-xx-xx
 
-# 今日目標
+## 今日目標
 
-完成第一個 Phaser Scene。
+-
 
-# 今日知識
+## 今日知識
 
-## Scene
+### Phaser API
 
-用途：
+```javascript
+/**
+ * 目的：
+ * [method]
+ */
+```
 
-...
+### Summary
 
-## preload()
+- answer | compare table | comparison list
 
-用途：
-
-...
-
-## create()
-
-用途：
-
-...
-
-## update()
-
-用途：
-
-...
-
-# 完成畫面
+## 完成畫面
 
 （截圖）
 
-# Demo GIF
+## Demo List
 
-（GIF）
+- [Demo](link)
 
-# Git Commit
+## Git Commit
 
-feat(day01): create first phaser scene
-
-# 學會的 Phaser API
-
-- new Phaser.Game()
-- preload()
-- create()
-- update()
+feat(day xx): <content>
 
 # AI Prompt
 
@@ -63,12 +45,13 @@ feat(day01): create first phaser scene
 
 # Reflection
 
-今天最難？
-
-今天最大的收穫？
-
-明天要改善什麼？
+- 今天最難？
+  > answer
+- 今天最大的收穫？
+  > answer
+- 明天要改善什麼？
+  > answer
 
 # 明日預告
 
-加入 Input。
+...
